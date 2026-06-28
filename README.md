@@ -6,6 +6,7 @@ Official Homebrew tap for the [Omnideck](https://github.com/omnideck-dev/cli) CL
 
 ```sh
 brew tap omnideck-dev/omnideck
+brew trust omnideck-dev/omnideck
 brew install omnideck
 ```
 
@@ -14,6 +15,8 @@ Or in one step:
 ```sh
 brew install omnideck-dev/omnideck/omnideck
 ```
+
+> **Note:** The `brew trust` step is required by Homebrew's third-party tap security policy. You only need to run it once.
 
 ## Usage
 
