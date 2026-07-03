@@ -18,10 +18,10 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Audit formula
-        run: brew audit --strict --online Formula/omnideck.rb
+        run: brew audit --strict --online omnideck
 
       - name: Install formula
-        run: brew install --formula Formula/omnideck.rb
+        run: brew install --formula omnideck
 
       - name: Run formula tests
-        run: brew test Formula/omnideck.rb
+        run: brew test omnideck
