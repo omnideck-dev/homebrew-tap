@@ -1,30 +1,30 @@
 class Omnideck < Formula
   desc "CLI tool for managing the Omnideck local agent harness"
   homepage "https://github.com/omnideck-dev/cli"
-  version "0.7.0"
+  version "0.8.0"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/omnideck-dev/cli/releases/download/v0.7.0/omnideck-darwin-amd64.tar.gz"
-      sha256 "da30e57aa565b1677d8d749fcc0cb82c3f9cac8ea27239d9ea1ba30968898c96"
+      url "https://github.com/omnideck-dev/cli/releases/download/v0.8.0/omnideck-darwin-amd64.tar.gz"
+      sha256 "63584d3dd639c5eeacb3cf7e997b9e9950c33d8ff76ae801de56d89c3743eb8c"
     end
 
     on_arm do
-      url "https://github.com/omnideck-dev/cli/releases/download/v0.7.0/omnideck-darwin-arm64.tar.gz"
-      sha256 "f9da5f67d1b7cda51b311f5beb019ab3a2491a8ca52caf43d1dd7668fa58a1f9"
+      url "https://github.com/omnideck-dev/cli/releases/download/v0.8.0/omnideck-darwin-arm64.tar.gz"
+      sha256 "2e8e4ed9d7b0557039f0d095ce831391be85e59c07d0e25ed74252b2bc7ce344"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/omnideck-dev/cli/releases/download/v0.7.0/omnideck-linux-amd64.tar.gz"
-      sha256 "24d83b22ef880d18ca4d019bd75408018205d1642378a1adc0b0667e34507df0"
+      url "https://github.com/omnideck-dev/cli/releases/download/v0.8.0/omnideck-linux-amd64.tar.gz"
+      sha256 "dac75853713d0a17b7677cca1f2edb11268242ede63b19953b834b66cdca5f5c"
     end
 
     on_arm do
-      url "https://github.com/omnideck-dev/cli/releases/download/v0.7.0/omnideck-linux-arm64.tar.gz"
-      sha256 "9a7c70df117cf4e7aec6a1c123d808bd4fd3792fc751c8cb342b5e8dd7df72e0"
+      url "https://github.com/omnideck-dev/cli/releases/download/v0.8.0/omnideck-linux-arm64.tar.gz"
+      sha256 "2183e95da654c9f98c799a55a39dc01d673389900d0976a35c8a203f4208e09b"
     end
   end
 
