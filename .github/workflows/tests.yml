@@ -1,23 +1,50 @@
-name: Formula Audit
+name: Formula CI
 
 on:
   push:
+    branches: ["main"]
     paths:
       - "Formula/**"
+      - ".github/workflows/tests.yml"
   pull_request:
+    branches: ["main"]
     paths:
       - "Formula/**"
+      - ".github/workflows/tests.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: formula-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  HOMEBREW_NO_ANALYTICS: "1"
+  HOMEBREW_NO_AUTO_UPDATE: "1"
+  HOMEBREW_NO_ENV_HINTS: "1"
+  HOMEBREW_NO_INSTALL_CLEANUP: "1"
 
 jobs:
-  audit:
-    runs-on: macos-latest
+  verify:
+    name: verify (${{ matrix.label }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-latest
+            label: macOS/arm64
+          - runner: ubuntu-latest
+            label: Linux/amd64
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
-
-      - name: Set up Homebrew
-        uses: Homebrew/actions/setup-homebrew@f78b97900ce6c3c9c4e99de00a999e5541eeaabb
+      - name: Set up Homebrew and check out the tap
+        uses: Homebrew/actions/setup-homebrew@1f8e202ffddf94def7f42f6fa3a482e821489f9c # 2026.07.10.1
 
       - name: Audit formula
+        if: runner.os == 'macOS'
         run: brew audit --strict --online omnideck
 
       - name: Install formula
