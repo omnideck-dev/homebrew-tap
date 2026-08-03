@@ -20,3 +20,7 @@ omnideck --help
 ```sh
 brew upgrade omnideck
 ```
+
+## Roadmap
+
+See the public [Omnideck Roadmap](https://github.com/orgs/omnideck-dev/projects/1) board for what's planned, in progress, and recently shipped.
