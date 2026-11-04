@@ -1,7 +1,6 @@
 class Omnideck < Formula
   desc "CLI tool for managing the Omnideck local agent harness"
   homepage "https://github.com/omnideck-dev/cli"
-  version "0.10.0"
   license "Apache-2.0"
 
   on_macos do
